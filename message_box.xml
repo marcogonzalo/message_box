@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="message_box_form" model="ir.ui.view">
+			<field name="name">message_box.form</field>
+			<field name="model">message_box</field>
+			<field eval="20" name="priority"/>
+			<field name="arch" type="xml">
+				<form string="Message box">
+					<field name="m_text" nolabel="1" />
+					<footer>
+						<button string="Close" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_message_box">
+			<field name="name">Message box</field>
+			<field name="res_model">message_box</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="message_box_form" />
+			<field name="target">new</field>
+		</record>
+	</data>
+</openerp>
